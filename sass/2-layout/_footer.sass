@@ -1,0 +1,100 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use 'layout-mixins'
+
+.footer-bg
+    background-color: variables.$secondary-bg-color
+    padding-top: 4em
+.footer
+    @include layout-mixins.center-content
+    flex-wrap: wrap
+    @include base-mixins.mobile
+        display: flex
+        justify-content: center
+    &-top
+        display: flex
+        justify-content: space-around
+        width: 100%
+
+        @include base-mixins.mobile
+            display: flex
+            flex-direction: column
+            text-align: center
+
+        &-logo
+            width: 330px
+            height: 160px
+
+            @include base-mixins.mobile
+                margin-bottom: 3.5em
+                width: 100%
+
+            /*LOGO*/
+            svg
+                width: 100%
+                height: 100%
+                fill: #fff
+                @include base-mixins.mobile
+                    width: 70%
+                    height: 70%
+
+            span
+                color: #fff
+                font-size: 1.5em
+                text-align: center
+
+        &-mapa, &-fala-conosco
+            h2
+                color: #fff
+                font-size: 1.6em
+                margin-bottom: .6em
+            li
+                margin-bottom: .4em
+                @include base-mixins.mobile
+                    font-size: 1.4em
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: center
+                a
+                    margin-left: .6em
+                    font-size: 1.3em
+                    color: #fff
+                    &:hover
+                        color: variables.$primary-color
+
+            @include base-mixins.mobile
+                margin: 0 2em
+                display: flex
+                justify-content: center
+                flex-direction: column
+                text-align: center
+                font-size: 1.3em
+
+    &-bottom
+        display: flex
+        justify-content: center
+        width: 100%
+        background-color: variables.$dark-color
+        padding: 2em 0
+        color: #fff
+
+        p
+            font-size: 1.2em
+            @include base-mixins.mobile
+                margin: 0 2em
+                text-align: center
+
+    .icons-social
+        margin: 4em 0
+        display: flex
+        justify-content: center
+        width: 100%
+        .rede-social-bottom
+            i
+                font-size: 3em
+                color: #fff
+                margin-right: 0.5em
+                transition: .4s
+
+            &:hover i
+                color: variables.$primary-color

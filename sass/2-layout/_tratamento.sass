@@ -1,0 +1,58 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use '../3-modules/buttons'
+@use 'layout-mixins'
+
+.services
+    @include layout-mixins.center-content
+    flex-direction: column
+    padding: 2rem 0
+    @include base-mixins.mobile
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding-bottom: 0.9rem
+    h2
+        @include layout-mixins.title
+        margin-bottom: 1.5em
+    &-content
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-around
+
+        &-card
+            width: 285px
+            height: 320px
+            border: 1px solid #96989A
+            border-radius: 8px
+            margin-right: 5em
+            margin-bottom: 6em
+            text-align: center
+            transition: .4s
+            overflow: hidden
+            cursor: pointer
+            @include base-mixins.mobile
+                margin: 1em 0
+
+            &:hover
+                border-radius: 8px
+                box-shadow: 0 1px 10px #96989A
+
+            img
+                width: 100%
+                max-height: 300px
+
+            h3,p
+                margin: 0 1em
+            h3
+                font-size: 1.5em
+
+            p
+                font-size: 1.2em
+.btn-aceitar
+    @include buttons.button
+    background-color: variables.$btn-yes
+    @include layout-mixins.center-content
+    margin-bottom: 2em
+    &:hover
+        background-color: #0B9E5C

@@ -1,0 +1,58 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+
+header
+    z-index: 10
+    position: relative
+    .header-container
+        transform: translateY(-120px)
+        position: absolute
+        width: 99vw
+        background-color: variables.$light-color
+        // background-color: green 1/*teste*/
+        padding: 1.3em 2rem
+        display: flex
+        /*flex*/
+        align-items: center
+        justify-content: space-between
+        border: none
+        transition: 1s
+
+        #agenda
+            display: flex
+            @include base-mixins.mobile
+                display: none
+
+            svg
+                width: 1.5em
+                height: 1.5em
+                margin-right: 0.7em
+            p
+                text-decoration: none
+                font-weight: bold
+                color: variables.$dark-color
+
+    .header-container.showHeader
+        transform: translateY(0)
+        position: fixed
+
+.logo-container
+    height: 50px
+
+    /*LOGO STUDIO FINESSE*/
+    svg
+        height: 3rem
+        width: 100%
+nav
+    display: flex
+    .rede-social
+        margin-right: 1rem
+        /*ICONS SOCIAL MEDIA*/
+        i
+            color: variables.$secondary-bg-color
+            font-size: 2.2em
+            transition: .4s
+            &:hover
+                color: variables.$primary-color
+    @include base-mixins.mobile
+        display: none

@@ -1,0 +1,101 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixins'
+@use 'layout-mixins'
+
+.depoimentos-grid
+    background-color: variables.$bg-color
+    padding-bottom: 2.3em
+    .depoimentos
+        @include layout-mixins.center-content
+        flex-direction: column
+
+        h4,h1
+            color: variables.$secondary-bg-color
+            text-align: center
+            margin-bottom: .6em
+
+        h4
+            margin-top: 3rem
+            font-weight: 300
+            font-size: 1.5em
+            @include base-mixins.mobile
+                font-size: 2em
+                margin-bottom: 0
+        h1
+            font-size: 2.7em
+
+        &-container
+            display: flex
+            justify-content: space-around
+
+            &-people
+                width: 30%
+                @include base-mixins.mobile
+                    width: 100%
+                    text-align: center
+
+            #people_2
+                @include base-mixins.mobile
+                    display: none
+            &-texto
+                width: 350px
+                position: relative
+                top: -62px
+                left: 30px
+                z-index: 4
+                @include base-mixins.mobile
+                    position: static
+                    display: flex
+                    justify-content: center
+                    flex-direction: column
+                    width: 100%
+
+                span
+                    font-weight: bold
+                    font-size: 1.5em
+                    display: flex
+                    justify-content: flex-end
+                    @include base-mixins.mobile
+                        font-size: 1.5em
+                        font-weight: bold
+                        display: inline
+
+                img
+                    @include base-mixins.mobile
+                        display: none
+                    width: 100%
+                    height: 110px
+                    position: absolute
+                    top: 13px
+                p
+                    @include base-mixins.mobile
+                        font-size: 1.2em
+                        position: static
+
+                    position: absolute
+                    top: 39px
+                    left: 20px
+                    font-size: 1.2em
+
+.pattern
+    @include base-mixins.mobile
+        width: 100%
+        display: flex
+        justify-content: center
+    &-circle
+        width: 200px
+        height: 200px
+        border-radius: 50%
+        border: 3px solid #fff
+        display: flex
+        justify-content: center
+        align-items: center
+        overflow: hidden
+        @include base-mixins.mobile
+            width: 230px
+            height: 230px
+            margin-bottom: 1em
+
+        img
+            width: 130%
+            max-height: 130%
